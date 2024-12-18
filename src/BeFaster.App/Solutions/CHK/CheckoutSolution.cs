@@ -8,7 +8,7 @@ namespace BeFaster.App.Solutions.CHK
         {
             int AC = 0 , BC = 0, CC = 0, DC = 0;
             if(string.IsNullOrEmpty(skus)){
-                return -1;
+                return 0;
             }
             foreach(char c in skus){
                 switch (c){
@@ -36,4 +36,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
