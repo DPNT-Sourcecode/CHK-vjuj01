@@ -41,7 +41,7 @@ namespace BeFaster.App.Solutions.CHK
             int KCDivision = dict['K'] / 2;
             int KCMod = dict['K'] % 2;
             int NCDivision = dict['N'] / 3;
-            if (dict['M'] > NCDivision) {dict['M'] -= ECDivision;}
+            if (dict['M'] > NCDivision) {dict['M'] -= NCDivision;}
             else dict['M'] = 0;
             int PCDivision = dict['P'] / 5;
             int PCMod = dict['P'] % 5;
@@ -68,6 +68,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
