@@ -10,13 +10,13 @@ namespace BeFaster.App.Solutions.CHK
             if(string.IsNullOrEmpty(skus)){
                 return 0;
             }
+            for (char ch = 'A'; ch <= 'Z'; ch++){
+                dict[ch] = 0;
+            }
             foreach(char c in skus){
                 if (char.IsUpper(c)){
                     if (dict.ContainsKey(c)){
                         dict[c]++;
-                    }
-                    else{
-                        dict[c] = 1;
                     }
                 }
                 else{
@@ -68,5 +68,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
