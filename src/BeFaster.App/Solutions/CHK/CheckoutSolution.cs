@@ -6,7 +6,7 @@ namespace BeFaster.App.Solutions.CHK
     {
         public static int ComputePrice(string? skus)
         {
-            int AC = 0 , BC = 0, CC = 0, DC = 0;
+            int AC = 0 , BC = 0, CC = 0, DC = 0, EC = 0;
             if(string.IsNullOrEmpty(skus)){
                 return 0;
             }
@@ -24,17 +24,26 @@ namespace BeFaster.App.Solutions.CHK
                     case 'D':
                         DC++;
                         break;
+                    case 'E':
+                        EC++;
+                        break;
                     default:
                         return -1;
                 }
             }
-            int ACDivision = AC / 3;
-            int ACMod = AC % 3;
+            int ACDivision1 = AC / 5;
+            int ACMod1 = AC % 5;
+            int ACDivision2 = ACMod1 / 3;
+            int ACMod2 = ACMod1 % 3;            
+            int ECDivision = EC / 2;
+            if (BC > ECDivision) {BC -= ECDivision;}
+            else BC = 0;
             int BCDivision = BC / 2;
             int BCMod = BC % 2;
-            return (ACDivision * 130) + (ACMod * 50) + (BCDivision * 45) + (BCMod * 30) + (CC * 20) + (DC * 15);
+            return (ACDivision1 * 200) + (ACDivision2 * 130) + (ACMod2 * 50) + (BCDivision * 45) + (BCMod * 30) + (CC * 20) + (DC * 15) + (EC * 40);
         }
     }
 }
+
 
 
