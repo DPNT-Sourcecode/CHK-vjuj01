@@ -18,7 +18,10 @@ namespace BeFaster.App.Solutions.CHK
                     else{
                         dict[c] = 1;
                     }
-                }                
+                }
+                else{
+                    return -1;
+                }               
             }
             int ACDivision1 = dict['A'] / 5;
             int ACMod1 = dict['A'] % 5;
@@ -65,4 +68,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
